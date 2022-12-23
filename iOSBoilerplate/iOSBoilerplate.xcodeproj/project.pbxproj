@@ -13,6 +13,7 @@
 		071B282E295564F500F3D7A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071B282C295564F500F3D7A1 /* Main.storyboard */; };
 		071B2830295564F600F3D7A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071B282F295564F600F3D7A1 /* Assets.xcassets */; };
 		071B2833295564F600F3D7A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 071B2831295564F600F3D7A1 /* LaunchScreen.storyboard */; };
+		071B283C2955662A00F3D7A1 /* AtomicSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 071B283B2955662A00F3D7A1 /* AtomicSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				071B283C2955662A00F3D7A1 /* AtomicSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = iOSBoilerplate;
+			packageProductDependencies = (
+				071B283B2955662A00F3D7A1 /* AtomicSDK */,
+			);
 			productName = iOSBoilerplate;
 			productReference = 071B2823295564F500F3D7A1 /* iOSBoilerplate.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +116,9 @@
 				Base,
 			);
 			mainGroup = 071B281A295564F500F3D7A1;
+			packageReferences = (
+				071B283A2955662A00F3D7A1 /* XCRemoteSwiftPackageReference "action-cards-ios-sdk-releases" */,
+			);
 			productRefGroup = 071B2824295564F500F3D7A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		071B283A2955662A00F3D7A1 /* XCRemoteSwiftPackageReference "action-cards-ios-sdk-releases" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/atomic-app/action-cards-ios-sdk-releases";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		071B283B2955662A00F3D7A1 /* AtomicSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 071B283A2955662A00F3D7A1 /* XCRemoteSwiftPackageReference "action-cards-ios-sdk-releases" */;
+			productName = AtomicSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 071B281B295564F500F3D7A1 /* Project object */;
 }

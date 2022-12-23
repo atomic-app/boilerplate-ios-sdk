@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "action-cards-ios-sdk-releases",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/atomic-app/action-cards-ios-sdk-releases",
+      "state" : {
+        "branch" : "master",
+        "revision" : "9d6caf12851e6bc27328322dd00df6eb90d1a55e"
+      }
+    }
+  ],
+  "version" : 2
+}
