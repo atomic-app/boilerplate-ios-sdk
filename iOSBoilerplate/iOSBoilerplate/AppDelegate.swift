@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AtomicSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        AACSession.enableDebugMode(1)
+        if let url = AtomicSettings.apiBaseUrl {
+            AACSession.setApiBaseUrl(url)
+        }
+        AACSession.initialise(withEnvironmentId: AtomicSettings.environmentId, apiKey: AtomicSettings.apiKey)
+        AACSession.setSessionDelegate(AtomicSessionDelegate())
         return true
     }
 
