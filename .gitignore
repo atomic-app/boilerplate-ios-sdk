@@ -1,0 +1,7 @@
+.DS_Store
+.ruby-version
+xcuserdata/
+Pods
+Build
+fastlane/report.xml
+fastlane/test_output
