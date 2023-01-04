@@ -2,7 +2,9 @@
 
 This is a boilerplate app that can be forked to get you started with the Atomic SDK for iOS.
 
-The code is based around the [Atomic iOS SDK documentation](https://documentation.atomic.io/sdks/ios) and designed to get you up and running as quickly as possible, not necessarily as best practice.
+The code is based around the [Atomic iOS SDK documentation](https://documentation.atomic.io/sdks/ios) and designed to get you up and running as quickly as possible, not necessarily as best practice. 
+
+Therefore we do NOT recommend uploading this boilerplate app or any of its modifications to AppStore, or using it in the production environment.
 
 ## Quick Start
 
