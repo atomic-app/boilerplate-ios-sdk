@@ -6,10 +6,10 @@ The code is based around the [documentation](https://documentation.atomic.io/sdk
 
 ## Quick Start
 
-Before installation, make sure you have the latest Xcode installed (currently v14.2 (14C18)). 
-[Add installation here].
+This boilerplate app is written as an Xcode project, whose project file is `iOSBoilerplate.xcodeproj`, located in folder `iOSBoilerplate`. Before opening this project, make sure you have the latest Xcode installed (currently v14.2 (14C18)). For simplified configuration, the Atomic SDK is imported using Swift Package Manager, so just open the Xcode project and choose File > Packages > Update to Latest Package Versions to get the latest SDK. In your real Xcode projects Atomic SDK can be installed as the [documentation](https://documentation.atomic.io/sdks/ios#installation) instructs.
 
-The app won't run out of the box, you will need to add your own values to fill the struct `AtomicSettings`.
+### SDK configuration
+The app won't run out of the box, you will need to add your own values to fill the struct `AtomicSettings`, located in file `iOSBoilerplate/Atomic/AtomicSettings.swift`.
 
 ![Atomic settings](AtomicSettings.png)
 
