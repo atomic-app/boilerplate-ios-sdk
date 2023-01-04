@@ -31,8 +31,8 @@ You are now on the runtime variables branch. A runtime variable `numberOfItems` 
 
 To test this feature:
 
-    - Create a card in [Atomic Workbench] (https://workbench.atomic.io/), and navigate to the `Variables` section of the card.
-    - Create a variable called `numberOfItems`, make sure `Allow update at runtime` is turned on.
+    - Create a card in [Atomic Workbench] (https://workbench.atomic.io/), and navigate to the "Variables" section of the card.
+    - Create a variable called "numberOfItems", make sure "Allow update at runtime" is turned on.
     - Use this variable on the card.
     - Publish the card and run this app.
     
