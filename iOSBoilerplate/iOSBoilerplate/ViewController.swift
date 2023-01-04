@@ -8,7 +8,7 @@
 import UIKit
 import AtomicSDK
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AACRuntimeVariableDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,8 +17,17 @@ class ViewController: UIViewController {
 
     @IBAction func didTapDefaultContainer(_ sender: Any) {
         let config = AACConfiguration()
+        config.runtimeVariableDelegate = self
         let container = AACStreamContainerViewController(identifier: AtomicSettings.streamContainerId, configuration: config)
         present(container, animated: true)
+    }
+    
+    func cardSessionDidRequestRuntimeVariables(_ cardsToResolve: [AACCardInstance], completionHandler: @escaping AACSessionRuntimeVariablesHandler) {
+        for card in cardsToResolve {
+            // Resolve variables on all cards.
+            card.resolveRuntimeVariable(withName: "numberOfItems", value: "120")
+        }        
+        completionHandler(cardsToResolve)
     }
 }
 
