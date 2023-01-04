@@ -27,7 +27,16 @@ You will also need to return a valid JSON Web Token (JWT) in `iOSBoilerplate/Ato
 
 ## Runtime Variables
 
-For an example of how to set runtime variables in your code, check out the branch [feature/runtime-variables](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/runtime-variables).
+You are now on the runtime variables branch. A runtime variable `numberOfItems` has been set up in file `iOSBoilerplate/ViewController.swift`, which has a value of `120`. 
+
+To test this feature:
+
+    - Create a card in [Atomic Workbench] (https://workbench.atomic.io/), and navigate to the "Variables" section of the card.
+    - Create a variable called "numberOfItems", make sure "Allow update at runtime" is turned on.
+    - Add content that uses this variable to the card.
+    - Publish the card and run this app.
+    
+![Creating runtime variables](RuntimeVariables.png)
 
 ## Notifications
 
