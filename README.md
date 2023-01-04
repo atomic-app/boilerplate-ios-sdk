@@ -13,7 +13,7 @@ The app won't run out of the box, you will need to add your own values to fill t
 
 ![Atomic settings](AtomicSettings.png)
 
-Instructions are as follows
+To find the correct values:
 
     - Open the [Atomic Workbench] (https://workbench.atomic.io/), and navigate to the Configuration area.
     - Under the 'SDK' header, your environment ID is at the top of the page under 'Environment ID'.
@@ -25,11 +25,11 @@ You will also need to return a valid JSON Web Token (JWT) in `iOSBoilerplate/Ato
 
 ## Runtime Variables
 
-For an example of how to set runtime variables in your code, check out the branch [feature/runtime-variables](placeholder.com).
+For an example of how to set runtime variables in your code, check out the branch [feature/runtime-variables](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/runtime-variables).
 
 ## Notifications
 
-For an example of how to set push notifications in your code, check out the branch [feature/push-notifications](placeholder.com).
+For an example of how to set push notifications in your code, check out the branch [feature/push-notifications](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/push-notifications).
 More detailed instructions for setting up push notifications can be found in our [Atomic iOS SDK documentation](https://documentation.atomic.io/sdks/ios#push-notifications), but the main steps are:
 
     - Modify the bundle-id to be unique.
