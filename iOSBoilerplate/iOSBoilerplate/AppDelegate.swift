@@ -59,6 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("⚠️ Push notification permission not granted. Turn it on in 'Settings' app.")
             }
         }
+        
+        // (Optional) Perform a custom action when tapping on a push notification
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
 
@@ -77,6 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Register device for push notifications
         AACSession.registerDevice(forNotifications: deviceToken) { error in
             if let error = error as? NSError , let errorCode = AACSessionPushRegistrationError.Code(rawValue: error.code) {
                 switch errorCode {
@@ -99,6 +103,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+}
 
+// (Optional) Perform a custom action when tapping on a push notification
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        if response.actionIdentifier == UNNotificationDefaultActionIdentifier,
+           let notification = AACSession.notification(fromPushPayload: response.notification.request.content.userInfo) {
+            // The payload originated from Atomic - use the properties on the object to determine the action to take.
+            print("🔔 Activated from push notification. Received a card in container \(notification.containerId), card instance ID \(notification.cardInstanceId).")
+        }
+    }
 }
 
