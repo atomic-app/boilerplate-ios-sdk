@@ -32,9 +32,3 @@ For an example of how to set runtime variables in your code, check out the branc
 ## Notifications
 
 For an example of how to set push notifications in your code, check out the branch [feature/push-notifications](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/push-notifications).
-More detailed instructions for setting up push notifications can be found in our [Atomic iOS SDK documentation](https://documentation.atomic.io/sdks/ios#push-notifications), but the main steps are:
-
-    - Modify the bundle-id to be unique.
-    - Set the signing configuration to use your own Apple developer account.
-    - Create an Apple Push Notification certificate for the app.
-    - Export the certificate and add it to your Atomic Workbench under Notifications.
