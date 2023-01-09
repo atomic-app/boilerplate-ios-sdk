@@ -19,6 +19,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         AACSession.initialise(withEnvironmentId: AtomicSettings.environmentId, apiKey: AtomicSettings.apiKey)
         AACSession.setSessionDelegate(AtomicSessionDelegate())
+        
+        // Register stream containers for push notifications.
+        AACSession.registerStreamContainers(forPushNotifications: [AtomicSettings.streamContainerId]) { error in
+            if let error = error as? NSError, let errorCode = AACSessionPushRegistrationError.Code(rawValue: error.code) {
+                switch errorCode {
+                case .domainDataError:
+                    // Deal with data error.
+                    if let dataError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        print("❌ A data error happened when registering containers for push notifications. \(dataError)")
+                    }
+                case .codeNetworkError:
+                    // Deal with network error.
+                    if let networkError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        print("❌ A network error happened when registering containers for push notifications. \(networkError)")
+                    }
+                @unknown default:
+                    // A new type of error is added in the future.
+                    if let unknownError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        print("❌ An unknown error happened when registering containers for push notifications. \(unknownError)")
+                    }
+                }
+            }
+        }
+        
+        // Request permission for push notifications.
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { granted, error in
+            if let error = error {
+                print("❌ An error happened when trying to obtain notification permission on device. \(error)")
+                return
+            }
+            if(granted) {
+                print("✅ Push notification permission granted, sending device token.")
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
+            } else {
+                print("⚠️ Push notification permission not granted. Turn it on in 'Settings' app.")
+            }
+        }
+        
+        // (Optional) Perform a custom action when tapping on a push notification
+        UNUserNotificationCenter.current().delegate = self
         return true
     }
 
@@ -35,6 +78,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // Register device for push notifications
+        AACSession.registerDevice(forNotifications: deviceToken) { error in
+            if let error = error as? NSError , let errorCode = AACSessionPushRegistrationError.Code(rawValue: error.code) {
+                switch errorCode {
+                case .domainDataError:
+                    // Deal with data error.
+                    if let dataError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        print("❌ A data error happened when registering the device for push notifications. \(dataError)")
+                    }
+                case .codeNetworkError:
+                    // Deal with network error.
+                    if let networkError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        print("❌ A network error happened when registering the device for push notifications. \(networkError)")
+                    }
+                @unknown default:
+                    // A new type of error is added in the future.
+                    if let unknownError = error.userInfo[NSUnderlyingErrorKey] as? NSError {
+                        print("❌ An unknown error happened when registering the device for push notifications. \(unknownError)")
+                    }
+                }
+            }
+        }
+    }
+}
 
+// (Optional) Perform a custom action when tapping on a push notification
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        if response.actionIdentifier == UNNotificationDefaultActionIdentifier,
+           let notification = AACSession.notification(fromPushPayload: response.notification.request.content.userInfo) {
+            // The payload originated from Atomic - use the properties on the object to determine the action to take.
+            print("🔔 Activated from push notification. Received a card in container \(notification.containerId), card instance ID \(notification.cardInstanceId).")
+        }
+    }
 }
 

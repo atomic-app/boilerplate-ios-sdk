@@ -31,10 +31,16 @@ For an example of how to set runtime variables in your code, check out the branc
 
 ## Notifications
 
-For an example of how to set push notifications in your code, check out the branch [feature/push-notifications](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/push-notifications).
-More detailed instructions for setting up push notifications can be found in our [Atomic iOS SDK documentation](https://documentation.atomic.io/sdks/ios#push-notifications), but the main steps are:
+**Note:** Push notifications can only be tested on physical devices.
 
-    - Modify the bundle-id to be unique.
-    - Set the signing configuration to use your own Apple developer account.
-    - Create an Apple Push Notification certificate for the app.
-    - Export the certificate and add it to your Atomic Workbench under Notifications.
+Check file `iOSBoilerplate/AppDelegate.swift` for how to register the stream container and device for push notifications. You also need to do some extra setup before trying this feature.
+
+Detailed instructions for setting up push notifications can be found in our [Atomic iOS SDK push notification documentation](https://documentation.atomic.io/sdks/ios#push-notifications), but the main steps are:
+
+- Enable the push notifications capability for the project, which has been done for this boilerplate app.
+- Register an App ID in your own Apple developer account. Change the bundle identifier of this app if necessary, and make sure "Push notifications" is enabled in "Capabilities".
+- Configure push notification authentication
+    - For certificate authentication, create an Apple Sandbox Push Services Certificate if you run the app directly from Xcode, create an Apple Push Services Certificate if you run the app from TestFlight.
+    - For token authentication, create an Apple Push Notifications service (APNs) key. 
+- Upload the certificate p12 file/token p8 file to your Atomic Workbench under Configuration -> Notifications. See [Atomic Workbench notifications documentation](https://documentation.atomic.io/workbench/configuration#notifications) for more details.
+
