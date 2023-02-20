@@ -44,3 +44,18 @@ Detailed instructions for setting up push notifications can be found in our [Ato
     - For token authentication, create an Apple Push Notifications service (APNs) key. 
 - Upload the certificate p12 file/token p8 file to your Atomic Workbench under Configuration -> Notifications. See [Atomic Workbench notifications documentation](https://documentation.atomic.io/workbench/configuration#notifications) for more details.
 
+**Note:** 
+The iOS sandbox notification in Atomic Workbench is only available for development purposes, such as apps installed via Xcode. If you're working with TestFlight or App Store apps, you'll need to set up a regular iOS notification. 
+
+To set up an iOS sandbox notification, you can upload either the Apple Sandbox Push Service Certificate or the Apple Push Services Certificate. However, for a regular iOS notification, you can only use the Apple Push Services Certificate.
+
+### Troubleshooting push notifications
+The following checklist can be used to verify if push notification is configured correctly.
+1. `[registerStreamContainersForPushNotifications:]` has been called.
+2. `[registerDeviceForNotifications:]` has been called.
+3. The Bundle Identifier matches the `Certificate Name` in Apple Push Services Certificate or Apple Sandbox Push Service Certificate.
+4. The correct type of certificate has been created. (Production for all situations, Sandbox for development)
+5. The certificate has been uploaded to Atomic Workbench.
+6. The correct type of Atomic Workbench push notification configration has been created. (Regular iOS for TestFlight or AppStore apps, Sandbox iOS for Xcode installation)
+7. The Bundle Identifier matches the ID in Atomic Workbench push notification.
+
