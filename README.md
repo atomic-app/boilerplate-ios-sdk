@@ -58,5 +58,5 @@ The following checklist can be used to verify if push notification is configured
 5. The certificate has been uploaded to Atomic Workbench.
 6. The correct type of Atomic Workbench push notification configration has been created. (Regular iOS for TestFlight or AppStore apps, Sandbox iOS for Xcode installation)
 7. The Bundle Identifier matches the ID in Atomic Workbench push notification.
-8. The `.entitlements` has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
+8. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
 
