@@ -36,6 +36,7 @@ For an example of how to set runtime variables in your code, check out the branc
  - The Mac computer has Apple silicon or T2 processors.
  - The Mac computer runs on macOS 13 or above.
  - The simulator runs on iOS 16 or above.
+ 
  For more details on push notifications in simulators, see [Xcode 14 Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-14-release-notes).
 
 Check file `iOSBoilerplate/AppDelegate.swift` for how to register the stream container and device for push notifications. You also need to do some extra setup before trying this feature.
