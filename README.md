@@ -8,7 +8,7 @@ Therefore we do NOT recommend uploading this boilerplate app or any of its modif
 
 ## Quick Start
 
-This boilerplate app is written as an Xcode project, whose project file is `iOSBoilerplate.xcodeproj`, located in the folder `iOSBoilerplate`. Before opening this project, make sure you have the latest Xcode installed (currently v14.2 (14C18)). For simplified configuration, the Atomic SDK is imported using Swift Package Manager, so just open the Xcode project and choose File > Packages > Update to Latest Package Versions to get the latest SDK. In your real Xcode projects, Atomic SDK can be installed as the [Atomic iOS SDK installation documentation](https://documentation.atomic.io/sdks/ios#installation) instructs.
+This boilerplate app is written as an Xcode project, whose project file is `iOSBoilerplate.xcodeproj`, located in the folder `iOSBoilerplate`. Before opening this project, make sure you have the latest Xcode installed (currently v14.3 (14E222b)). For simplified configuration, the Atomic SDK is imported using Swift Package Manager, so just open the Xcode project and choose File > Packages > Update to Latest Package Versions to get the latest SDK. In your real Xcode projects, Atomic SDK can be installed as the [Atomic iOS SDK installation documentation](https://documentation.atomic.io/sdks/ios#installation) instructs.
 
 ### SDK configuration
 The app won't run out of the box, you will need to add your own values to fill the struct `AtomicSettings`, located in file `iOSBoilerplate/Atomic/AtomicSettings.swift`.
@@ -31,7 +31,12 @@ For an example of how to set runtime variables in your code, check out the branc
 
 ## Notifications
 
-**Note:** Push notifications can only be tested on physical devices.
+**Note:** Conditions to match if you want to test push notifications on simulators:
+ - Xcode version is 14.0 or above.
+ - The Mac computer has Apple silicon or T2 processors.
+ - The Mac computer runs on macOS 13 or above.
+ - The simulator runs on iOS 16 or above.
+ For more details on push notifications in simulators, see [Xcode 14 Release Notes](https://developer.apple.com/documentation/xcode-release-notes/xcode-14-release-notes).
 
 Check file `iOSBoilerplate/AppDelegate.swift` for how to register the stream container and device for push notifications. You also need to do some extra setup before trying this feature.
 
