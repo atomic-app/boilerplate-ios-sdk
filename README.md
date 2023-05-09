@@ -57,12 +57,13 @@ To set up an iOS sandbox notification, you can upload either the Apple Sandbox P
 
 ### Troubleshooting push notifications
 The following checklist can be used to verify if push notification is configured correctly.
-1. `[registerStreamContainersForPushNotifications:]` has been called.
-2. `[registerDeviceForNotifications:]` has been called.
-3. The Bundle Identifier matches the `Certificate Name` in Apple Push Services Certificate or Apple Sandbox Push Service Certificate.
-4. The correct type of certificate has been created. (Production for all situations, Sandbox for development)
-5. The certificate has been uploaded to Atomic Workbench.
-6. The correct type of Atomic Workbench push notification configration has been created. (Regular iOS for TestFlight or AppStore apps, Sandbox iOS for Xcode installation)
-7. The Bundle Identifier matches the ID in Atomic Workbench push notification.
-8. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
+1. Notifications are enabled for the card you are sending, which can be checked on 'Notifications' tab of the card in Atomic Workbench.
+2. `[registerStreamContainersForPushNotifications:]` has been called and no errors are returned.
+3. `[registerDeviceForNotifications:]` has been called and no errors are returned.
+4. The Bundle Identifier matches the `Certificate Name` in Apple Push Services Certificate or Apple Sandbox Push Service Certificate.
+5. The correct type of certificate has been created. (Production for all situations, Sandbox for local deployment by Xcode)
+6. The certificate has been uploaded to Atomic Workbench.
+7. The correct type of Atomic Workbench's push notification configuration has been created. ('iOS' for AdHoc, TestFlight or AppStore apps, 'iOS Sandbox' for Xcode installation)
+8. The Bundle Identifier matches the ID in Atomic Workbench's push notification configuration.
+9. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
 
