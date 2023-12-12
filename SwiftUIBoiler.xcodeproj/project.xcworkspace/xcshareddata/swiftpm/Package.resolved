@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/atomic-app/action-cards-ios-sdk-releases",
       "state" : {
-        "branch" : "master",
-        "revision" : "9d6caf12851e6bc27328322dd00df6eb90d1a55e"
+        "revision" : "8fdb857613d87ab264a9230a77dca9c62bbdbf1e",
+        "version" : "23.3.1"
       }
     }
   ],
