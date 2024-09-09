@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88316FC72C8A3DB100084425 /* AtomicSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 88316FC62C8A3DB100084425 /* AtomicSDK */; };
+		88316FC92C8A3DB100084425 /* AtomicSwiftUISDK in Frameworks */ = {isa = PBXBuildFile; productRef = 88316FC82C8A3DB100084425 /* AtomicSwiftUISDK */; };
+		8867A6D42C8F868C009BD781 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8867A6D32C8F868C009BD781 /* ModalView.swift */; };
 		88E78D882B28EAC9000BA625 /* SwiftUIBoilerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E78D872B28EAC9000BA625 /* SwiftUIBoilerApp.swift */; };
 		88E78D8A2B28EAC9000BA625 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E78D892B28EAC9000BA625 /* ContentView.swift */; };
 		88E78D8C2B28EACA000BA625 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E78D8B2B28EACA000BA625 /* Assets.xcassets */; };
 		88E78D8F2B28EACA000BA625 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88E78D8E2B28EACA000BA625 /* Preview Assets.xcassets */; };
-		88E78D972B28EB8C000BA625 /* AtomicSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 88E78D962B28EB8C000BA625 /* AtomicSDK */; };
 		88E78D992B28EFF4000BA625 /* AtomicConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E78D982B28EFF4000BA625 /* AtomicConfiguration.swift */; };
 		88E78D9B2B28F148000BA625 /* AtomicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E78D9A2B28F148000BA625 /* AtomicViewModel.swift */; };
 		88E78D9D2B28F1FC000BA625 /* AtomicSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E78D9C2B28F1FC000BA625 /* AtomicSessionDelegate.swift */; };
@@ -19,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8867A6D32C8F868C009BD781 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		88E78D842B28EAC9000BA625 /* SwiftUIBoiler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIBoiler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E78D872B28EAC9000BA625 /* SwiftUIBoilerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIBoilerApp.swift; sourceTree = "<group>"; };
 		88E78D892B28EAC9000BA625 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,7 +38,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88E78D972B28EB8C000BA625 /* AtomicSDK in Frameworks */,
+				88316FC92C8A3DB100084425 /* AtomicSwiftUISDK in Frameworks */,
+				88316FC72C8A3DB100084425 /* AtomicSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +73,7 @@
 				88E78D9A2B28F148000BA625 /* AtomicViewModel.swift */,
 				88E78D9C2B28F1FC000BA625 /* AtomicSessionDelegate.swift */,
 				88E78D9E2B28F3AA000BA625 /* AtomicContainerWrapper.swift */,
+				8867A6D32C8F868C009BD781 /* ModalView.swift */,
 			);
 			path = SwiftUIBoiler;
 			sourceTree = "<group>";
@@ -98,7 +103,8 @@
 			);
 			name = SwiftUIBoiler;
 			packageProductDependencies = (
-				88E78D962B28EB8C000BA625 /* AtomicSDK */,
+				88316FC62C8A3DB100084425 /* AtomicSDK */,
+				88316FC82C8A3DB100084425 /* AtomicSwiftUISDK */,
 			);
 			productName = SwiftUIBoiler;
 			productReference = 88E78D842B28EAC9000BA625 /* SwiftUIBoiler.app */;
@@ -129,7 +135,7 @@
 			);
 			mainGroup = 88E78D7B2B28EAC9000BA625;
 			packageReferences = (
-				88E78D952B28EB8C000BA625 /* XCRemoteSwiftPackageReference "action-cards-ios-sdk-releases" */,
+				88316FC52C8A3DB100084425 /* XCRemoteSwiftPackageReference "action-cards-swiftui-sdk-releases" */,
 			);
 			productRefGroup = 88E78D852B28EAC9000BA625 /* Products */;
 			projectDirPath = "";
@@ -161,6 +167,7 @@
 				88E78D9B2B28F148000BA625 /* AtomicViewModel.swift in Sources */,
 				88E78D8A2B28EAC9000BA625 /* ContentView.swift in Sources */,
 				88E78D882B28EAC9000BA625 /* SwiftUIBoilerApp.swift in Sources */,
+				8867A6D42C8F868C009BD781 /* ModalView.swift in Sources */,
 				88E78D9F2B28F3AA000BA625 /* AtomicContainerWrapper.swift in Sources */,
 				88E78D9D2B28F1FC000BA625 /* AtomicSessionDelegate.swift in Sources */,
 			);
@@ -370,21 +377,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		88E78D952B28EB8C000BA625 /* XCRemoteSwiftPackageReference "action-cards-ios-sdk-releases" */ = {
+		88316FC52C8A3DB100084425 /* XCRemoteSwiftPackageReference "action-cards-swiftui-sdk-releases" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/atomic-app/action-cards-ios-sdk-releases";
+			repositoryURL = "https://github.com/atomic-app/action-cards-swiftui-sdk-releases";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 23.3.1;
+				minimumVersion = 24.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		88E78D962B28EB8C000BA625 /* AtomicSDK */ = {
+		88316FC62C8A3DB100084425 /* AtomicSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 88E78D952B28EB8C000BA625 /* XCRemoteSwiftPackageReference "action-cards-ios-sdk-releases" */;
+			package = 88316FC52C8A3DB100084425 /* XCRemoteSwiftPackageReference "action-cards-swiftui-sdk-releases" */;
 			productName = AtomicSDK;
+		};
+		88316FC82C8A3DB100084425 /* AtomicSwiftUISDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88316FC52C8A3DB100084425 /* XCRemoteSwiftPackageReference "action-cards-swiftui-sdk-releases" */;
+			productName = AtomicSwiftUISDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,8 +9,25 @@ import Foundation
 import AtomicSDK
 
 class AtomicViewModel : ObservableObject {
+    
+    @Published var showModal = false
+    
     init() {
         setupAtomic()
+        
+        AACSession.observeCardCountForStreamContainer(withIdentifier: AtomicConfiguration.modalContainer, interval: 5) { count in
+            if let count = count {
+                Task {
+                    await self.updateModal(show: Int(truncating: count) > 0)
+                }
+            }
+        }
+    }
+    
+    func updateModal(show: Bool) async {
+        await MainActor.run() {
+            self.showModal = show
+        }
     }
     
     func setupAtomic() {

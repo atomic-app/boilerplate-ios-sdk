@@ -6,22 +6,34 @@
 //
 
 import SwiftUI
+import AtomicSwiftUISDK
+import AtomicSDK
 
 struct ContentView: View {
     
-    @StateObject var viewModel = AtomicViewModel()
+    @StateObject private var viewModel = AtomicViewModel()
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            AtomicContainerWrapper()
-                .frame(maxWidth: .infinity)
+        NavigationStack {
+            VStack {
+                NavigationLink {
+                    ZStack {
+                        StreamContainer(isInNavigationStack: true, containerId: AtomicConfiguration.streamContainerId)
+                            .navigationTitle("Atomic Stream")
+                    }
+                } label: {
+                    Text("Messages")
+                }
+            }
+            .padding()
+            .navigationTitle("Atomic Boilerplate")
+            .navigationBarTitleDisplayMode(.large)
         }
-        .padding()
+        .sheet(isPresented: $viewModel.showModal) {
+            ModalView()
+        }
     }
+    
 }
 
 #Preview {

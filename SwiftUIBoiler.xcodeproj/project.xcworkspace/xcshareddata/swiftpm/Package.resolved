@@ -1,14 +1,15 @@
 {
+  "originHash" : "9e02960257f978d72d25f18eab0370f571ac40fa81184f52d178cbaf007984c1",
   "pins" : [
     {
-      "identity" : "action-cards-ios-sdk-releases",
+      "identity" : "action-cards-swiftui-sdk-releases",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/atomic-app/action-cards-ios-sdk-releases",
+      "location" : "https://github.com/atomic-app/action-cards-swiftui-sdk-releases",
       "state" : {
-        "revision" : "8fdb857613d87ab264a9230a77dca9c62bbdbf1e",
-        "version" : "23.3.1"
+        "revision" : "a520b04c2b2565767f81d4d4fd5eee0034893e23",
+        "version" : "24.2.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
