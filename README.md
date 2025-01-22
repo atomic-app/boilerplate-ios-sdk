@@ -65,6 +65,7 @@ The following checklist can be used to verify if push notification is configured
 6. The correct type of certificate has been created. (Production for all situations, Sandbox for local deployment by Xcode)
 7. The certificate has been uploaded to Atomic Workbench.
 8. The correct type of Atomic Workbench's push notification configuration has been created. ('iOS' for AdHoc, TestFlight or AppStore apps, 'iOS Sandbox' for Xcode installation)
-9. The Bundle Identifier matches the ID in Atomic Workbench's push notification configuration.
-10. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
+9. `Send data-only notifications` is not turned on for push notification.
+10. The Bundle Identifier matches the ID in Atomic Workbench's push notification configuration.
+11. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
 
