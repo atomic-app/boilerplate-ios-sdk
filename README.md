@@ -58,14 +58,14 @@ To set up an iOS sandbox notification, you can upload either the Apple Sandbox P
 ### Troubleshooting push notifications
 The following checklist can be used to verify if push notification is configured correctly.
 1. Notifications are enabled for the card you are sending, which can be checked on 'Notifications' tab of the card in Atomic Workbench.
-2. Check the target platforms (iOS, Android or Web) for the card you are sending in Atomic Workbench. It's on `Delivery` tab of the card or in the `Advanced` section of `Send test card` dialog.
-3. `[registerStreamContainersForPushNotifications:]` has been called and no errors are returned.
-4. `[registerDeviceForNotifications:]` has been called and no errors are returned.
-5. The Bundle Identifier matches the `Certificate Name` in Apple Push Services Certificate or Apple Sandbox Push Service Certificate.
-6. The correct type of certificate has been created. (Production for all situations, Sandbox for local deployment by Xcode)
-7. The certificate has been uploaded to Atomic Workbench.
-8. The correct type of Atomic Workbench's push notification configuration has been created. ('iOS' for AdHoc, TestFlight or AppStore apps, 'iOS Sandbox' for Xcode installation)
-9. `Send data-only notifications` is not turned on for push notification.
-10. The Bundle Identifier matches the ID in Atomic Workbench's push notification configuration.
-11. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
-
+2. Check whether the notification preference in the user profile is correctly set up. See the [iOS SDK Guide](https://documentation.atomic.io/sdks/ios#setting-up-notification-preferences) for more information.
+3. Check the target platforms (iOS, Android or Web) for the card you are sending in Atomic Workbench. It's on `Delivery` tab of the card or in the `Advanced` section of `Send test card` dialog.
+4. `[registerStreamContainersForPushNotifications:]` has been called and no errors are returned.
+5. `[registerDeviceForNotifications:]` has been called and no errors are returned.
+6. The Bundle Identifier matches the `Certificate Name` in Apple Push Services Certificate or Apple Sandbox Push Service Certificate.
+7. The correct type of certificate has been created. (Production for all situations, Sandbox for local deployment by Xcode)
+8. The certificate has been uploaded to Atomic Workbench.
+9. The correct type of Atomic Workbench's push notification configuration has been created. ('iOS' for AdHoc, TestFlight or AppStore apps, 'iOS Sandbox' for Xcode installation)
+10. `Send data-only notifications` is not turned on for push notification.
+11. The Bundle Identifier matches the ID in Atomic Workbench's push notification configuration.
+12. The entitlement file has been set up in the project. (See `iOSBoilerplate.entitlements` for more details)
