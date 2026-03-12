@@ -13,12 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        AACSession.enableDebugMode(1)
+        AACSession.enableDebugMode(0)
         if let url = URL(string: AtomicSettings.apiHost) {
-            AACSession.setApiBaseUrl(url)
+            AACSession.login(withEnvironmentId: AtomicSettings.environmentId, apiKey: AtomicSettings.apiKey, sessionDelegate: AtomicSessionDelegate(), apiBaseUrl: url)
         }
-        AACSession.initialise(withEnvironmentId: AtomicSettings.environmentId, apiKey: AtomicSettings.apiKey)
-        AACSession.setSessionDelegate(AtomicSessionDelegate())
         return true
     }
 

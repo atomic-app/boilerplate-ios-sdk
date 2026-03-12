@@ -1,14 +1,15 @@
 {
+  "originHash" : "917bb1c8b96827cca6d7767c2c2aaeb8e5b762cb790aa87edcf898e98b2d1587",
   "pins" : [
     {
       "identity" : "action-cards-ios-sdk-releases",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/atomic-app/action-cards-ios-sdk-releases",
       "state" : {
-        "branch" : "master",
-        "revision" : "9d6caf12851e6bc27328322dd00df6eb90d1a55e"
+        "revision" : "9dfbc723308d30a82914fbc8da610e3d25af47e3",
+        "version" : "24.3.1"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
