@@ -2,6 +2,12 @@
 
 This is a boilerplate app that can be forked to get you started with the Atomic SDK for iOS.
 
+For this specific branch, it showcases updating an unseen badge in real time based on card delivery and visibility. 
+
+To trigger the badge, send cards to the specified container. To remove the badge, open the container by tapping the button.
+
+The Atomic SDK version in this branch has been pinned to version 24.3.1.
+
 The code is based around the [Atomic iOS SDK documentation](https://documentation.atomic.io/sdks/ios) and designed to get you up and running as quickly as possible, not necessarily as best practice. 
 
 Therefore we do NOT recommend uploading this boilerplate app or any of its modifications to AppStore, or using it in the production environment.
@@ -24,11 +30,3 @@ To find the correct values:
     - Your API key can be found (or created) in the 'API Keys' section.
 
 You will also need to return a valid JSON Web Token (JWT) in `iOSBoilerplate/Atomic/AtomicSessionDelegate.swift` for authentication. See [SDK Authentication](https://documentation.atomic.io/sdks/auth-SDK) for more details on how to generate a JWT.
-
-## Runtime Variables
-
-For an example of how to set runtime variables in your code, check out the branch [feature/runtime-variables](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/runtime-variables).
-
-## Notifications
-
-For an example of how to set push notifications in your code, check out the branch [feature/push-notifications](https://github.com/atomic-app/boilerplate-ios-sdk/tree/feature/push-notifications).
